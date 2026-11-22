@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.communityhealthsystem"
+    namespace = "com.example.healthsystem"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.example.communityhealthsystem"
+        applicationId = "com.example.healthsystem"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
