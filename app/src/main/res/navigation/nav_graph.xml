@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.communityhealthsystem.ui.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_login_to_dashboard"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.communityhealthsystem.ui.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.communityhealthsystem.ui.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+
+        <action
+            android:id="@+id/action_dashboard_to_book"
+            app:destination="@id/bookAppointmentFragment" />
+
+        <action
+            android:id="@+id/action_dashboard_to_catalog"
+            app:destination="@id/serviceCatalogFragment" />
+
+        <action
+            android:id="@+id/action_dashboard_to_update"
+            app:destination="@id/updateAppointmentFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/serviceCatalogFragment"
+        android:name="com.example.communityhealthsystem.ui.ServiceCatalogFragment"
+        android:label="Service Catalog"
+        tools:layout="@layout/fragment_service_catalog" />
+
+    <fragment
+        android:id="@+id/bookAppointmentFragment"
+        android:name="com.example.communityhealthsystem.ui.BookAppointmentFragment"
+        android:label="Book Appointment"
+        tools:layout="@layout/fragment_book_appointment" />
+
+    <fragment
+        android:id="@+id/updateAppointmentFragment"
+        android:name="com.example.communityhealthsystem.ui.UpdateAppointmentFragment"
+        android:label="Reschedule Appointment"
+        tools:layout="@layout/fragment_update_appointment" />
 
 </navigation>
